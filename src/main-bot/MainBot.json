@@ -1,0 +1,15 @@
+{
+  "name": "Main Bot",
+  "version": "1.0",
+  "authors": [
+    "Theo Kurniady"
+  ],
+  "description": "Greedy af.",
+  "homepage": "",
+  "countryCodes": [
+    "us",
+    "dk"
+  ],
+  "platform": ".Net 6.0",
+  "programmingLang": "C# 10.0"
+}
