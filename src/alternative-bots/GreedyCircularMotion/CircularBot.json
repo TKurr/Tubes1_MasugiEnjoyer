@@ -1,0 +1,10 @@
+{
+  "name": "CircularBot Bot",
+  "version": "1.0",
+  "authors": ["Nathanael Rachmat"],
+  "description": "A bot that circles around another bot evasively",
+  "homepage": "",
+  "countryCodes": ["id"],
+  "platform": ".Net 9.0",
+  "programmingLang": "C# 10.0"
+}
