@@ -1,0 +1,10 @@
+{
+  "name": "Aggressive Bot",
+  "version": "1.0",
+  "authors": ["Nathanael Rachmat"],
+  "description": "A bot that aggressive locks a bot, targets it, and then circle it to death",
+  "homepage": "",
+  "countryCodes": ["id"],
+  "platform": ".Net 9.0",
+  "programmingLang": "C# 10.0"
+}
