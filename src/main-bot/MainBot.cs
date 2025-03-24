@@ -19,8 +19,7 @@ public class MainBot : Bot
     }
 
     private readonly List<EnemyInfo> enemies = new();
-    private const double TARGET_DISTANCE = 70;
-    private const int WALL_HIT_LIMIT = 2;
+    private const double LIMIT_TARGET_DISTANCE = 70;
 
     public MainBot() : base(BotInfo.FromFile("MainBot.json")) { }
 
@@ -88,14 +87,21 @@ public class MainBot : Bot
         }
 
         double enemyBearing = BearingTo(nearestEnemy.X, nearestEnemy.Y);
-        SetTurnLeft(enemyBearing);
+        SetTurnLeft(NormalizeBearing(enemyBearing));
 
-        if (minDistance > TARGET_DISTANCE)
+        if (minDistance > LIMIT_TARGET_DISTANCE)
         {
-            SetForward(minDistance - TARGET_DISTANCE); 
+            SetForward(minDistance - LIMIT_TARGET_DISTANCE); 
         } else {
-            SetBack(TARGET_DISTANCE - minDistance);
+            SetBack(LIMIT_TARGET_DISTANCE - minDistance);
         }
+    }
+
+    private double NormalizeBearing(double angle)
+    {
+        while (angle > 180) angle -= 360;
+        while (angle < -180) angle += 360;
+        return angle;
     }
 
     public override void OnHitBot(HitBotEvent e)
