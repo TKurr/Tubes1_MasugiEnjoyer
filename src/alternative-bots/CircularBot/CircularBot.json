@@ -2,7 +2,7 @@
   "name": "CircularBot Bot",
   "version": "1.0",
   "authors": ["Nathanael Rachmat"],
-  "description": "A bot that circles around another bot evasively",
+  "description": "A bot that circles around another bot elusively",
   "homepage": "",
   "countryCodes": ["id"],
   "platform": ".Net 9.0",
