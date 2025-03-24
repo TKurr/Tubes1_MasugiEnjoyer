@@ -2,7 +2,7 @@
 
 # Greedy Bots for Robocode Tank Royale
 
-Ini adalah koleksi bot cerdas berbasis strategi **Greedy** yang diimplementasikan untuk turnamen **Robocode Tank Royale** menggunakan bahasa C# (.NET 6).
+Ini adalah koleksi bot cerdas berbasis strategi **Greedy** yang diimplementasikan untuk turnamen **Robocode Tank Royale** menggunakan bahasa C# (.NET 9).
 
 ---
 
@@ -39,10 +39,7 @@ Ini adalah koleksi bot cerdas berbasis strategi **Greedy** yang diimplementasika
 - Menghindari peluru dengan terus bergerak membentuk lingkaran.
 - Saat tidak menemukan musuh, bot akan _reset_ dan memutar badan 90°, serta radar 360°.
 - Arah gerak akan berubah jika menabrak tembok, tertembak, atau bertabrakan.
-- Tembakan menggunakan **Smart Fire**:  
-  \[
-  \text{power} = 3 \times e^{-0.01 \times \text{distance}}
-  \]
+- Tembakan menggunakan **Smart Fire**:
 
 ---
 
@@ -53,7 +50,7 @@ Ini adalah koleksi bot cerdas berbasis strategi **Greedy** yang diimplementasika
 - Bot memutari musuh pada sudut ±45° dari posisi musuh.
 - Radar tetap mengarah ke musuh dengan memantul bolak-balik.
 - Jika sudut tembak tepat, maka bot langsung menembak dengan power yang dihitung secara eksponensial.
-- Menggunakan hitungan orbit berdasarkan \(\mathrm{atan2}(dy, dx)\) + offset ±45°.
+- Menggunakan hitungan orbit agar melingkari bot musuh.
 - Kecepatan bot disesuaikan agar perputaran tetap _smooth_ meski sudut besar.
 
 ---
@@ -72,12 +69,15 @@ Ini adalah koleksi bot cerdas berbasis strategi **Greedy** yang diimplementasika
 
 - Buka tautan [GUI Release v1.0](https://github.com/Ariel-HS/tubes1-if2211-starter-pack/releases/tag/v1.0).
 - Unduh (**download**) paket GUI dari halaman rilis tersebut dan ekstrak ke folder yang Anda inginkan.
+- Ikuti perintah READ ME pada hasil cloning tersebut.
 
 ### 2. Clone Repositori Bot
 
 ```bash
 git clone https://github.com/TKurr/Tubes1_MasugiEnjoyer.git
 ```
+
+- Dari GUI, pilih konfigurasi direktori dari hasil clone repositori ini, kemudian start battle.
 
 ### 3. Compile Bot
 
