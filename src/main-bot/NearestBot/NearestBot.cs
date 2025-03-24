@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Robocode.TankRoyale.BotApi;
 using Robocode.TankRoyale.BotApi.Events;
 
-public class MainBot : Bot
+public class NearestBot : Bot
 {
     private struct EnemyInfo
     {
@@ -21,7 +21,7 @@ public class MainBot : Bot
     private readonly List<EnemyInfo> enemies = new();
     private const double LIMIT_TARGET_DISTANCE = 70;
 
-    public MainBot() : base(BotInfo.FromFile("MainBot.json")) { }
+    public NearestBot() : base(BotInfo.FromFile("NearestBot.json")) { }
 
     public override void Run()
     {
@@ -30,7 +30,7 @@ public class MainBot : Bot
         while (IsRunning)
         {
             TurnRadarRight(360);
-            if (enemies.Count > 0)  
+            if (enemies.Count > 0)
             {
                 MoveToNearestEnemy();
             }
@@ -72,7 +72,7 @@ public class MainBot : Bot
 
     private void MoveToNearestEnemy()
     {
-        if (enemies.Count == 0) return; 
+        if (enemies.Count == 0) return;
         EnemyInfo nearestEnemy = enemies[0];
         double minDistance = DistanceTo(nearestEnemy.X, nearestEnemy.Y);
 
@@ -91,8 +91,10 @@ public class MainBot : Bot
 
         if (minDistance > LIMIT_TARGET_DISTANCE)
         {
-            SetForward(minDistance - LIMIT_TARGET_DISTANCE); 
-        } else {
+            SetForward(minDistance - LIMIT_TARGET_DISTANCE);
+        }
+        else
+        {
             SetBack(LIMIT_TARGET_DISTANCE - minDistance);
         }
     }
@@ -119,6 +121,6 @@ public class MainBot : Bot
 
     public static void Main()
     {
-        new MainBot().Start();
+        new NearestBot().Start();
     }
 }
