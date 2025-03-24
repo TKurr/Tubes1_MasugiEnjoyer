@@ -1,0 +1,10 @@
+{
+  "name": "Scanning Bot",
+  "version": "1.0",
+  "authors": ["Sebastian Enrico N"],
+  "description": "The weak don't just lose, they perish",
+  "homepage": "",
+  "countryCodes": ["id"],
+  "platform": ".Net 9.0",
+  "programmingLang": "C# 10.0"
+}
